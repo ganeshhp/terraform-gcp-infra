@@ -1,0 +1,7 @@
+project*.json
+.terraform
+.terraform.lock.hcl
+*.out
+*.tfstate
+*.tfstate.backup
+
