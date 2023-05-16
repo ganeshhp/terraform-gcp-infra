@@ -12,9 +12,9 @@ resource "google_compute_instance" "vm_instance_1" {
   }
 
   network_interface {
-    network    = data.google_compute_network.custom-vpc.self_link
-    subnetwork = data.google_compute_subnetwork.custom-subnet.self_link
-  # subnetwork = "default"
+  #  network    = data.google_compute_network.custom-vpc.self_link
+  #  subnetwork = data.google_compute_subnetwork.custom-subnet.self_link
+   subnetwork = "default"
     access_config {
       # ephemeral external IP expected
     }
