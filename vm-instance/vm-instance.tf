@@ -1,7 +1,7 @@
 # Define VM instances
 
 resource "google_compute_instance" "vm_instance_1" {
-  for_each     = toset(["node-c1", "node-wn1"])
+  for_each     = toset(["node-c1", "node-wn1", "node-wn2"])
   name         = each.value
   machine_type = var.machine-type
   zone         = var.zone-name
@@ -12,9 +12,9 @@ resource "google_compute_instance" "vm_instance_1" {
   }
 
   network_interface {
-  #  network    = data.google_compute_network.custom-vpc.self_link
-  #  subnetwork = data.google_compute_subnetwork.custom-subnet.self_link
-    subnetwork = "default"
+    network    = data.google_compute_network.custom-vpc.self_link
+    subnetwork = data.google_compute_subnetwork.custom-subnet.self_link
+  # subnetwork = "default"
     access_config {
       # ephemeral external IP expected
     }
